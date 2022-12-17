@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel="icon" type="image/x-icon" href="static/images/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='{% static "css/reset.css" %}' />
+    <link rel='stylesheet' href='{% static "css/home_view.css" %}' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+    <title>Health Tracker</title>
+</head>
+<body>
+    {% include './header.html' %}
+
+    <section id="home" class="main-section">
+        {% for i in home %}
+        <h1>{{i.main_title}}</h1>
+        <p>{{i.main_paragraph}}</p>
+        <a href="#" class="btn btn-outline-danger btn-lg get-started" tabindex="-1" role="button" >Get Started</a>
+        <section class="overview-inner">
+            <div class="overview-first">
+                <div class="text"><h3>{{ i.overview_img_desc }}</h3></div>
+                <div class="dummy"></div>
+                <img src='{{ i.overview_img.url }}'/>
+                
+            </div>
+            <div class="overview-second">
+                <div class="text"><h3>{{ i.calories_img_desc }}</h3></div>
+                <div class="dummy"></div>
+                <img src='{{ i.calories_img.url }}'/>
+            </div>
+            <div class="overview-third">
+                <div class="text"><h3>{{ i.body_measurements_img_desc }}</h3></div>
+                <div class="dummy"></div>
+                <img src='{{ i.body_measurements_img.url }}'/>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <h1>{{i.about_title}}</h1>
+            <p>{{i.about_paragraph}}</p>
+        </section>
+
+        <section id="services" class="services-section">
+            <h1>{{i.sevices_title}}</h1>
+            <p>{{i.sevices_paragraph}}</p>
+            <div class="services-cards">
+                <div class="card first-card">
+                    <img src="{{ i.overview_img.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">{{i.s1_title}}</h5>
+                    <p class="card-text">{{i.s1_paragraph}}</p>
+                    <a href="#" class="btn btn-danger">Get Started</a>
+                    </div>
+                </div>
+                <div class="card second-card" >
+                    <img src='{{ i.calories_img.url }}' class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{i.s2_title}}</h5>
+                        <p class="card-text">{{i.s2_paragraph}}</p>
+                        <a href="#" class="btn btn-danger">Get Started</a>
+                    </div>
+                </div>
+                <div class="card third-card">
+                    <img src='{{ i.body_measurements_img.url }}' class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{i.s3_title}}</h5>
+                        <p class="card-text">{{i.s3_paragraph}}</p>
+                        <a href="#" class="btn btn-danger">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endfor %}
+        <section id="contact" class="contact-section">
+            <h1>Contact Us</h1>
+
+            <form class="row g-3">
+                <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="name">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="inputEmail4">
+                  </div>
+                <div class="col-md-12">
+                  <label for="inputEmail4" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-md-12">
+                    <label for="inputEmail4" class="form-label">Subject</label>
+                    <input type="text" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-md-12">
+                <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-danger">Send 🚀</button>
+                </div>
+              </form>
+
+        </section>
+        
+    </section>
+
+    <section class="overview-section">
+        
+    </section>
+
+    {% include './footer.html' %}
+</body>
+</html>

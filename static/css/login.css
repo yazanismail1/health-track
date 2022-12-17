@@ -1,0 +1,24 @@
+.login {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 7%;
+    padding: 0 35px;
+}
+
+.login-wrapper {
+    min-width: 36%;
+}
+
+.login-wrapper p a {
+    text-decoration: none;
+}
+
+.login-wrapper h2 {
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.log-in-btn {
+    width: 100%;
+}

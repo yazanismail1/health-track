@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    {% if user.is_authenticated %}
+        {% include './header.html'%}
+    {% else %}
+        <h1>Sign In to proceed</h1>
+        <a href="{% url 'login' %}">Sign In</a>
+    {% endif %}
+{% endblock %}
